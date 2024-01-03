@@ -12,6 +12,7 @@ const TypeTest = () => {
         fetchNewSentence();
     }, []);
 
+    // this will fetch the sentence from that wb;
     const fetchNewSentence = () => {
         fetch('https://api.quotable.io/random')
             .then(response => response.json())
@@ -39,11 +40,13 @@ const TypeTest = () => {
         };
     };
 
+    // store the start time
     const handleStartTyping = () => {
         const startTime = new Date();
         setStartTime(startTime);
     };
 
+    // handle the reset button
     const handleTryAgain = () => {
         fetchNewSentence();
     }
@@ -75,7 +78,6 @@ const TypeTest = () => {
                 </div>
             )}
         </div> // container class
-
     )
 }
 
