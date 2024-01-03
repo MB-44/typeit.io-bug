@@ -1,0 +1,55 @@
+.headerContainer{
+    margin-top: -20px;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+h1 {
+    font-size: 27px;
+    color: #fff;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 90px;
+}
+
+.navBarItems li a{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navBarItems button {
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.navBarItems button:hover {
+    background-color: #d0c11c;
+}
+
+/* .navbar-item button:active {
+    background-color: #d7dbdf;
+    color: ;
+} */
+
+.navBarItems li {
+    list-style-type: none;
+}
+
+.navBarItems ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
