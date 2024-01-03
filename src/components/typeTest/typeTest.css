@@ -45,8 +45,29 @@
     padding: 5px;
 }
 
-
 .select-time-word button:hover {
-    color: #acd116;
+    color: #e8e650;
     background-color: #3e4043;
+}
+
+.try-again-button {
+    width: 140px;
+    height: 40px;
+    font-size: medium;
+    color: white;
+    background-color: #323437;
+    border: 1px solid white;
+    font-weight: bold;
+    /* padding: 20px; */
+    margin-bottom: 30px;
+}
+
+.try-again-button:hover {
+    background-color: #525457;
+    color: #e8e650;
+}
+
+.try-again-button::before {
+    content: '\21BA   ';
+    font-size: 20px;
 }

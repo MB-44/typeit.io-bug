@@ -9,11 +9,20 @@ const TypeTest = () => {
     const [wordsPerMinute, setWordsPerMinute] = useState(0);
 
     useEffect(() => {
+        fetchNewSentence();
+    }, []);
+
+    const fetchNewSentence = () => {
         fetch('https://api.quotable.io/random')
-            .then(respnse => respnse.json())
+            .then(response => response.json())
             .then(data => setSentence(data.content))
             .catch(error => console.error("Error Fetching sentence: ", error));
-    }, []);
+        
+            setUserInput('');
+            setStartTime(null);
+            setEndTime(null);
+            setWordsPerMinute(0);
+    };
 
     const handleInputChange = (e) => {
         const inputValue = e.target.value;
@@ -34,6 +43,10 @@ const TypeTest = () => {
         const startTime = new Date();
         setStartTime(startTime);
     };
+
+    const handleTryAgain = () => {
+        fetchNewSentence();
+    }
 
     return (
 
@@ -56,6 +69,8 @@ const TypeTest = () => {
             />
             {endTime && (
                 <div className="result">
+                    <button className="try-again-button" onClick={handleTryAgain}>Try Again</button>
+                    <br />
                     Your typing speed: {wordsPerMinute} WPM
                 </div>
             )}
