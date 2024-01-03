@@ -11,7 +11,7 @@ function Header(){
                 <div className={styles.navBarItems}>
                     <ul>
                         <li><button><a href="#">Check</a></button></li>
-                        <li><button><a href="#">Dashboard</a></button></li>
+                        <li><button className={styles.dashboard_button}><a href="#">Dashboard</a></button></li>
                     </ul>
                 </div>
 

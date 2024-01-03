@@ -53,3 +53,8 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+/* .dashboard_button::after {
+    content: '\f0e4';
+    font-family: "Font Awesome 5 Free";
+} */
