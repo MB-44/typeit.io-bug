@@ -14,6 +14,11 @@ const CountDownTimer = ({initialTime}) => {
         }
     }, [time]);
 
+    useEffect(() => {
+        setTime(initialTime);
+    }, [initialTime]);
+
+
 
     return (
         <div className='count-down-timer'>
