@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './typeTest.css';
+import CountDownTimer from "../countDownTimer/timer";
 
 const TypeTest = () => {
     const [sentence, setSentence] = useState('');
@@ -59,6 +60,8 @@ const TypeTest = () => {
                 <button className="time-30s">30s</button>
                 <button className="time-15s">15s</button>
             </div>
+            
+            <CountDownTimer />
 
             <br /><hr /><br />
             
