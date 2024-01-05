@@ -21,8 +21,6 @@ function SignUp() {
         handleToHomePage();
     }
 
-
-
     return (
         <>
         <Header/>
