@@ -38,10 +38,24 @@ function SignUp() {
                 <form action="" className="login-form">
                     <input type="text" placeholder="email"/><br />
                     <input type="text" placeholder="password"/><br />
-                    <input type="checkbox" id="remember-me"/><p>Remember me</p>
+                    <div className="remember-me">
+                        <input type="checkbox" id="remember-me" className="checkbox-remember-me"/>
+                        <label htmlFor="remember-me" className="remember-me-label">
+                            <span className="checkbox-span"></span>
+                            Remember me
+                        </label>
+                    </div>
+                    {!showHome && (
+                        <button type="submit" 
+                            onClick={handleToHomePage}
+                            className="login-button">
+                            Sign In
+                        </button>
+                    )}
+                    {showHome && <Home/>}
+
                 </form>
             </div>
-        
         </div>
         </>
     );
