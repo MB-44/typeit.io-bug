@@ -8,8 +8,20 @@ function SignUp() {
     const [showHome, setShowHome] = useState(false);
 
     const handleToHomePage = () => {
-        setShowHome(false)
+        setShowHome(true)
     }
+
+    const handleSignUpButton = (e) => {
+        // e.preventDefault();
+        handleToHomePage();
+    }
+
+    const handleLogInButton = (e) => {
+        // e.preventDefault();
+        handleToHomePage();
+    }
+
+
 
     return (
         <>
@@ -17,7 +29,10 @@ function SignUp() {
         <div className="container">
             <div className="signup-container">
                 <h2>register </h2>
-                <form action="" className="register-form">
+                <form action="" 
+                    onSubmit={handleSignUpButton} 
+                    className="register-form">
+                    
                     <input type="text" placeholder="username"/><br />
                     <input type="text" placeholder="email"/><br />
                     <input type="text" placeholder="verify email"/><br />
@@ -30,12 +45,15 @@ function SignUp() {
                             Sign Up
                         </button>
                     )}
-                    {showHome && <Home/>}
+
                 </form>
             </div>
             <div className="login-container">
                 <h2>login</h2>
-                <form action="" className="login-form">
+                <form action="" 
+                    onSubmit={handleLogInButton} 
+                    className="login-form">
+                    
                     <input type="text" placeholder="email"/><br />
                     <input type="text" placeholder="password"/><br />
                     <div className="remember-me">
@@ -52,11 +70,11 @@ function SignUp() {
                             Sign In
                         </button>
                     )}
-                    {showHome && <Home/>}
 
                 </form>
             </div>
         </div>
+        {/* {showHome && <Home/>} */}
         </>
     );
 }
