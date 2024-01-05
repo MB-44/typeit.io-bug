@@ -11,12 +11,12 @@ function SignUp() {
         setShowHome(true)
     }
 
-    const handleSignUpButton = (e) => {
+    const handleSignUpButton = () => {
         // e.preventDefault();
         handleToHomePage();
     }
 
-    const handleLogInButton = (e) => {
+    const handleLogInButton = () => {
         // e.preventDefault();
         handleToHomePage();
     }
@@ -74,7 +74,7 @@ function SignUp() {
                 </form>
             </div>
         </div>
-        {/* {showHome && <Home/>} */}
+        {showHome && <Home/>}
         </>
     );
 }
