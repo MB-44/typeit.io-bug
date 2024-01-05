@@ -11,15 +11,13 @@ function Home() {
         setShowTypeTest(true)
     }
 
-
-
     return (
         <>
             <Header/>
             <div className="type-body">
             
                 {!showTypeTest && (
-                    <button className="to-enter-button" onClick={setShowTypeTest}>
+                    <button className="to-enter-button" onClick={handleStartTyping}>
                         Start typing..
                     </button>
                 )}
