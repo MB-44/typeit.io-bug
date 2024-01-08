@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "rollup/plugin-tersor": "^0.4.4",
     "@testing-library/dom": "^8.12.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
