@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES3",
+        "lib": ["DOM","ES2015"],
+        "jsx": "react",
+        "module": "CommonJS",
+        "strict": true,
+        "esModuleInterop": true
+    },
+    "include": ["src/**/*.tsx", "src/**/*.ts"],
+    "exclude": ["node_modules"]
+}

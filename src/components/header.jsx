@@ -24,11 +24,105 @@ const useStyles = createStyles((theme) => {
 
 function PageHeader() {
     const [opened, {toggle, close}] = useDisclosure(false)
-    const HEIGHT = 70
+    const { classes, cx } = useStyles();
+    const router = useRouter();
 
     return (
-        <Header>
-            <Container></Container>
+        <Header height={70} className={classes.root}>
+            <Container className={classes.header}>
+                <Group spacing="xl">
+                    <Text className={classes.title}>
+                        typeIt.io
+                    </Text>
+                    <div className={classes.burger}>
+                        <div className={classes.hide}>
+                            {/* color scheme toggle and burger */}
+                        </div>
+                    </div>
+                </Group>
+
+                <Group spacing={5} className={classes.links}>
+                    <Link href="/">
+                        <a
+                          key="Home"  
+                          className={cx(classes.links, router.pathname == "/" ? classes.linkActive: '')}  
+                          onClick={(e) => {
+                            close();
+                          }}>
+                            Home
+                          </a>
+                    </Link>
+                    
+                    <Link href="/dashboard">
+                        <a
+                          key="Dashboard"  
+                          className={cx(classes.links, router.pathname == "/dashboard" ? classes.linkActive: '')}  
+                          onClick={(e) => {
+                            close();
+                          }}>
+                            Dashboard
+                          </a>
+                    </Link>
+                    
+                    <Link href="/user">
+                        <a
+                          key="User"  
+                          className={cx(classes.links, router.pathname == "/user" ? classes.linkActive: '')}  
+                          onClick={(e) => {
+                            close();
+                          }}>
+                            Profile
+                          </a>
+                    </Link>
+                </Group>
+                
+                <Burger
+                    opened={opened}
+                    onClick={toggle}
+                    className={classes.burger}
+                    size="sm"
+                    aria-label={ToggleButton}
+                    />
+
+                <Transition transition={'pop-top-right'} duration={200} mounted={opened}>
+                    {(styles) => (
+                        <Paper className={classes.dropdown} withBorder style={styles}>
+                            <Link href="/">
+                                <a
+                                  key="Home"  
+                                  className={cx(classes.links, router.pathname == "/" ? classes.linkActive: '')}  
+                                  onClick={(e) => {
+                                    close();
+                                  }}>
+                                    Home
+                                  </a>
+                            </Link>
+                    
+                            <Link href="/dashboard">
+                                <a
+                                  key="Dashboard"  
+                                  className={cx(classes.links, router.pathname == "/dashboard" ? classes.linkActive: '')}  
+                                  onClick={(e) => {
+                                    close();
+                                  }}>
+                                    Dashboard
+                                  </a>
+                            </Link>
+                    
+                            <Link href="/user">
+                                <a
+                                  key="User"  
+                                  className={cx(classes.links, router.pathname == "/user" ? classes.linkActive: '')}  
+                                  onClick={(e) => {
+                                    close();
+                                  }}>
+                                    Profile
+                                  </a>
+                            </Link>
+                        </Paper>
+                    )}
+                </Transition>
+            </Container>
         </Header>
     );
 }
